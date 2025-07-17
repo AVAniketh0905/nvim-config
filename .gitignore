@@ -1,0 +1,4 @@
+*.nvim/
+queries/
+
+packer_compiled.lua
