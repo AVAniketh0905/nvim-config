@@ -19,8 +19,31 @@ vim.keymap.set('n', '<leader>db', function()
     builtin.diagnostics({ bufnr = 0 })
 end, { desc = "Buffer Diagnostics" })
 
--- Code Actions
+-- Telescope setup
 require("telescope").setup {
+    defaults = {
+        file_ignore_patterns = {
+            "%.env",        -- ignore .env files
+            "%.venv",       -- ignore .venv directories
+            "node_modules", -- ignore node_modules
+            "%.git",        -- ignore .git
+            "dist",         -- ignore dist folder
+        },
+        vimgrep_arguments = {
+            'rg',
+            '--color=never',
+            '--no-heading',
+            '--with-filename',
+            '--line-number',
+            '--column',
+            '--smart-case',
+            '--glob', '!.venv/**',        -- ignore .venv folder
+            '--glob', '!.env/**',         -- ignore .env folder
+            '--glob', '!node_modules/**', -- ignore node_modules
+            '--glob', '!.git/**',         -- ignore .git
+            '--glob', '!dist/**',         -- ignore dist folder
+        },
+    },
     extensions = {
         ["ui-select"] = {
             require("telescope.themes").get_dropdown {
@@ -30,5 +53,5 @@ require("telescope").setup {
     }
 }
 
--- load_extension, somewhere after setup function:
+-- Load extensions
 require("telescope").load_extension("ui-select")
