@@ -24,10 +24,27 @@ require('mason-lspconfig').setup({
         'pyright', -- Python LSP
         'gopls',   -- Go LSP
         'lua_ls',  -- Lua LSP
+        'clangd',  -- C/Cpp LSP
     },
     handlers = {
         lsp.default_setup,
     }
+})
+
+
+-- esp-idf setup
+local lspconfig = require('lspconfig')
+
+lspconfig.clangd.setup({
+    cmd = {
+        "clangd",
+        "--background-index",
+        "--clang-tidy",
+        "--completion-style=detailed",
+        "--header-insertion=never",
+        "--compile-commands-dir=build"
+    },
+    filetypes = { "c", "cpp", "objc", "objcpp" },
 })
 
 lsp.setup()
