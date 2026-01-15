@@ -33,21 +33,19 @@ require('mason-lspconfig').setup({
 
 
 -- esp-idf setup
-local lspconfig = require('lspconfig')
-
-lspconfig.clangd.setup({
+vim.lsp.config.clangd = {
     cmd = {
         "clangd",
         "--background-index",
         "--clang-tidy",
         "--completion-style=detailed",
         "--header-insertion=never",
-        "--compile-commands-dir=build"
+        "--compile-commands-dir=build",
     },
     filetypes = { "c", "cpp", "objc", "objcpp" },
-})
+}
 
-lsp.setup()
+vim.lsp.enable("clangd")
 
 vim.diagnostic.config({
     virtual_text = true,

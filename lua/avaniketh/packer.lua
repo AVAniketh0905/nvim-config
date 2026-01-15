@@ -63,11 +63,11 @@ return require('packer').startup(function(use)
             require("mini.surround").setup({})
         end
     })
-    use({
-        "bmd.nvim",
-        path = "C:/Users/AVAniketh/AppData/Local/nvim/bmd.nvim",
-        config = function()
-            require("bmd").setup()
-        end,
-    })
+    --use({
+    --    "bmd.nvim",
+    --    path = "C:/Users/AVAniketh/AppData/Local/nvim/bmd.nvim",
+    --    config = function()
+    --        require("bmd").setup()
+    --    end,
+    --})
 end)
