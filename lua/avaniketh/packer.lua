@@ -12,16 +12,15 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
     use { 'nvim-telescope/telescope-ui-select.nvim' }
+    use { "nvim-telescope/telescope-file-browser.nvim" }
     use { "catppuccin/nvim", as = "catppuccin" }
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
-    use {
-        'nvim-treesitter/playground'
-    }
     use { 'mbbill/undotree' }
     use { 'tpope/vim-fugitive' }
+    use { 'nvim-tree/nvim-web-devicons' }
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',
