@@ -61,6 +61,9 @@ require("telescope").setup {
             theme = "ivy",       -- Or "center", but "ivy" looks great for explorers
             hijack_netrw = true, -- This officially replaces Netrw
             initial_mode = "normal",
+            layout_config = {
+                prompt_position = "bottom",
+            },
         }
     }
 }
