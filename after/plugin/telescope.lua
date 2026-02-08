@@ -24,7 +24,7 @@ require("telescope").setup {
         layout_strategy = 'horizontal',
         layout_config = {
             horizontal = {
-                preview_width = 0.55, -- Adjust this to give more/less room to the file content
+                preview_width = 0.56, -- Adjust this to give more/less room to the file content
                 results_width = 0.8,
             },
             width = 0.87,
